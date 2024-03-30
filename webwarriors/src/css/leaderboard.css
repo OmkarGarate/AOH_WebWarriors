@@ -29,6 +29,22 @@
     bottom: -125px;
 }
 
+.sparkle {
+    width: 200px;
+    position: absolute;
+    left: 362px;
+    right: 0;
+    top: -120px;
+    transform: rotate(45deg);
+}
+.sparkle2 {
+    position: absolute;
+    left: -249px;
+    right: 0;
+    transform: rotate(45deg);
+    bottom: -125px;
+}
+
 .bglb{
     width: 100%;
     height: 100vh;
@@ -107,16 +123,10 @@
 }
 
 .lbC1 img{
-    width: 50px;
+    width: 70px;
     display: flex;
     height: 50px;
     object-fit: contain;
-}
-
-.lbC1 img:nth-child(2)
-{
-    border-radius: 50%; 
-    /* background-color: black;  */
 }
 
 .lbC1 img:nth-child(1){

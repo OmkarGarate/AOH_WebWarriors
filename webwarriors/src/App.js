@@ -32,6 +32,7 @@ import UpdateEve from './Components/UpdateEve';
 import UpdateEve2 from './Components/UpdateEve2';
 import Category from './Components/Category'
 import LeaderBoard from './Components/LeaderBoard';
+import '../src/css/leaderboard.css'
 
 
 

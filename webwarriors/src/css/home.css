@@ -10,15 +10,17 @@
 
 /* Track */
 ::-webkit-scrollbar {
-  width: 8px; /* width of the scrollbar */
-  background-color: transparent;
-  display: none;
+   /* width of the scrollbar */
+  background-color: black;
+  /* display: none; */
+  width: 4px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(145deg, #ff3600, 70%, #ffc52b); /* color of the scrollbar handle */
-  border-radius: 10px; /* roundness of the scrollbar handle */
+   /* roundness of the scrollbar handle */
+   border-radius: 10px;
 }
 
 /* Handle on hover */
@@ -36,6 +38,12 @@ input, select, textarea{
     outline: none;
 }
 
+.bth{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
 .navbarMain{
     /* border: 1px solid black; */
     position: absolute;
@@ -51,18 +59,24 @@ input, select, textarea{
     width: 65%;
     margin: auto;
     position: relative;
-    /* background-color: rgba(0, 0, 0, 0.237);
-    backdrop-filter: blur(10px); */
     padding: 0 20px;
 }
 
 .logo{
     padding-top: 1rem;
-    width: 125px;
-    height: 85px;
+    width: 100px;
+    height: 60px;
 }
 
-
+.tanse{
+  text-align: center;
+  margin-top: 50px;
+  /* border: 1px solid black; */
+  /* width: 100%; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
 
 .navComps{
     /* border: 1px solid black; */
@@ -96,21 +110,60 @@ input, select, textarea{
 }
 
 .navComps .pns{
-    border: 1px solid #ff4e00;
-    /* border: none; */
-    background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
-    padding: 5px 8px;
-    border-radius: 40px;
-    cursor: pointer;
-    box-shadow: 0px 1px 10px 0px #ff4e00;
-    transform: translateY(0);
-    transition: all 0.2s ease-in-out;
+  border: 1px solid #ff4e00;
+  /* border: none; */
+  background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
+  padding: 8px 8px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0px 1px 10px 0px #ff4e00;
+  transform: translateY(0);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pns img{
     width: 15px;
     /* height: 40px; */
     /* padding: 10px; */
+}
+
+.searchedEle {
+  width: 45%;
+  /* height: 300px; */
+  /* overflow-y: scroll; */
+  margin: 10px auto;
+  /* padding: 10px; */
+  background: #ffffff00;
+  -webkit-backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
+  box-shadow: 0 0 1rem rgb(0 0 0 / 30%);
+  border-radius: 10px;
+  position: absolute;
+  /* left: 35%; */
+  right: 15px;
+  z-index: 1;
+  top: 100px;
+}
+
+.searchedEle li {
+  list-style: none;
+  margin: 5px 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 400;
+  /* transition: 0.3s ease-in; */
+}
+
+.searchedEle a {
+  text-decoration: none;
+  
+}
+
+.searchedEle li:hover{
+  font-weight: 500;
 }
 
 .pns:hover{
@@ -132,10 +185,6 @@ input, select, textarea{
 }
 
 /* Home Slider */
-.homeSlider{
-    /* border: 1px solid black; */
-}
-
 .slide img{
     width: 100%;
     height: 100svh;
@@ -172,12 +221,12 @@ input, select, textarea{
 
 .slideDesc h1{
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.1rem;
     font-weight: 800;
 }
 
 .slideDesc p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 20px 0;
     font-weight: 600;
 }
@@ -204,9 +253,23 @@ input, select, textarea{
 }
 
 .sdBtns .gs{
-    background-image: none;
-    background-color: transparent;
-    border: 3px solid #ff4e00;
+    /* background-image: none; */
+    /* background-color: #3c3c3c; */
+    /* box-shadow: rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, 
+            rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, 
+            rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, 
+            rgba(255, 255, 255, 0.06) 0px 2px 1px, 
+            rgba(255, 255, 255, 0.09) 0px 4px 2px, 
+            rgba(255, 255, 255, 0.09) 0px 8px 4px, 
+            rgba(255, 255, 255, 0.09) 0px 16px 8px, 
+            rgba(255, 255, 255, 0.09) 0px 32px 16px; */
+
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+           
+
+       
+
+    /* border: 3px solid #ff4e00; */
 }
 
 .slidermain {
@@ -290,6 +353,13 @@ input, select, textarea{
     margin: 20px 0;
 }
 
+.me .elCat{
+  /* border: 1px solid black;  */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .l-head strong{
     font-weight: 800;
 }
@@ -347,14 +417,16 @@ input, select, textarea{
     flex-direction: column;
     align-items: center;
     position: relative;
-    height: 300px;
+    height: 350px;
     justify-content: flex-end;
 }
 
 .slideImg{
     /* border: 1px solid black; */
-    width: 240px;
-    height: 300px;
+    /* width: 240px;
+    height: 300px; */
+    width: 100%;
+    height: 100%;
     position: absolute;
     transition: 0.5s ease-in;
     cursor: pointer;
@@ -388,18 +460,19 @@ input, select, textarea{
     /* opacity: 1; */
     cursor: pointer;
     bottom: 0px;
+    left: 0;
     box-shadow: 0px 0px 10px 0px lightgray;
 }
 
 .slideEve:hover .siDesc{
-    bottom: 35px;
-    /* right: 0; */
-    height: 245px;
-    width: 200px;
-    z-index: 1;
-    opacity: 1;
-    padding: 20px;
-    padding-top: 50px;
+  bottom: 85px;
+  left: 0;
+  height: 245px;
+  width: 200px;
+  z-index: 1;
+  opacity: 1;
+  padding: 20px;
+  padding-top: 50px;
 }
 
 .siDesc h2{
@@ -566,7 +639,7 @@ input, select, textarea{
     gap: 35px;
     transition: 0.5s ease-in-out;
     translate: 0;
-    margin: 30px 0;
+    margin: 40px 0;
 }
 
 .eventRow{
@@ -620,6 +693,7 @@ input, select, textarea{
 .eleDesc{
     width: 50%;
     padding: 10px;
+    position: relative;
 }
 
 .eleDesc .slt{
@@ -635,6 +709,25 @@ input, select, textarea{
 .eleDesc h2{
     font-size: 1rem;
     font-weight: 800;
+}
+
+.description .delete{
+  border: 1px solid black;
+  width: max-content;
+  padding: 5px 15px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  background-color: red;
+  border: none;
+  border-radius: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.delete:hover{
+  background-color: rgb(208, 3, 3);
 }
 
 .ticketPrice{
@@ -673,6 +766,7 @@ input, select, textarea{
     margin: 0px 10px;
     padding: 5px 15px;
     /* border: 1px solid gray; */
+    font-size: 0.9rem;
     border: none;
     outline: none;
     border-radius: 15px;
@@ -778,7 +872,7 @@ input, select, textarea{
 
 .vag{
     padding: 10px 20px;
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: bold;
     background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
     color: white;
@@ -1116,7 +1210,7 @@ footer.footer{
   }
   footer.footer .copy-rights{
     justify-content: center;
-    padding: 20px .4rem;
+    padding-bottom: 20px;
   }
   footer.footer .copy-rights h4{
     color: #ffffff;
@@ -1171,6 +1265,114 @@ footer.footer{
       transform: translateX(-50%);
     }
   }
+
+  /* FAQ SECTION */
+
+
+  .faq-container {
+    max-height: 200px; /* Set the initial height to show only 2 questions */
+    overflow-y: auto; /* Add vertical scrollbar if needed */
+    margin-top: 20px;
+}
+
+.accordion.show-all {
+    max-height: none;
+}
+
+.show-more {
+    margin-top: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+  .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .item{
+    background: black;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+  }
+  
+  .title{
+    color: #85662b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 2px;
+    }
+
+    .title h3{
+      margin-right: 10px;
+      font-size: 15px;
+      text-align: justify;
+    }
+
+    .title span{
+      font-size: 20px;
+      font-weight: bold;
+      text-align: justify;
+    }
+  
+    .content{
+      color: #8b7f75;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0,1,0,1);
+      font-size: 13px;
+      font-weight: bold;
+      text-align: justify;
+      margin-top: 3px;
+    }
+  
+    .content.show{
+      height: auto;
+      max-height: 9999px;
+      transition: all 0.5s cubic-bezier(1,0,1,0);
+    }
+  
+
+   /* Track */
+.faq-container::-webkit-scrollbar {
+  width: 5px; /* Adjust the width of the scrollbar */
+  background-color: transparent;
+}
+
+/* Handle */
+.faq-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(145deg, #ff3600, 70%, #ffc52b); /* Color of the scrollbar handle */
+  border-radius: 5px; /* Adjust the border radius to make it smaller */
+}
+
+/* Handle on hover */
+.faq-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(145deg, #ff2900, 70%, #ffbb00); /* Color of the scrollbar handle on hover */
+}
+
+
+
+footer.footer .container .chat-button{
+  padding: 0px;
+  margin: 0px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+.chat-button button img{
+ height: 55px;
+ width: 38px;
+}
+
+
+  
+    
 
   /* Footer Ends*/
 

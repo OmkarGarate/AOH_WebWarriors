@@ -69,7 +69,7 @@ function AllGallery() {
             {groupedEvents.map((events, rowIndex)=>(
                 <div className="rowIndex" key={rowIndex}>
                     {events.map((eve, index)=>(
-                    <Link to={"/eventPage"} className={`evePhotos item${index + 1}`} key={index} >
+                    <Link to={`/eventPage/${eve._id}`} className={`evePhotos item${index + 1}`} key={index} >
                       {/* <div className="cover"></div> */}
                       <img src={eve.img} alt="Event"/>
                       <div className="geDesc">

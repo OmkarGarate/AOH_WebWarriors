@@ -1,68 +1,4 @@
-// import React, { useState } from 'react';
-// import img1 from "../Images/collage-images/unnamed(2).jpeg";
-// import img2 from "../Images/collage-images/unnamed (1).jpg";
-// import img3 from "../Images/collage-images/unnamed(3).jpeg";
-// import img4 from "../Images/collage-images/unnamed.jpg";
-// import img5 from "../Images/collage-images/dy.jpeg";
-// import img6 from "../Images/collage-images/sies.jpeg";
-
-// function CollegeListing() {
-
-//     const [showMore, setShowMore] = useState(false);
-//     const [collegesToShow, setCollegesToShow] = useState(6);
-//     const colleges = [
-//         { id: 1, name: 'Bharati Vidyapeeth DET Kharghar', location: 'Kharghar', imageUrl: `${img1}`},
-//         { id: 2, name: 'Bharati Vidyapeeth MU Kharghar', location: 'Kharghar', imageUrl: `${img2}` },
-//         { id: 3, name: 'Pillai Collage Panvel', location: 'Kharghar', imageUrl: `${img3}` },
-//         { id: 4, name: 'Bharati Vidyapeeth Pune', location: 'Kharghar', imageUrl: `${img4}` },
-//         { id: 5, name: 'Dy Patil Pune', location: 'Kharghar', imageUrl: `${img5}` },
-//         { id: 6, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: `${img6}` },
-//         { id: 7, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: `${img6}` },
-//         { id: 8, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: `${img6}` },
-//         { id: 9, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: `${img6}` },
-//         { id: 10, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: `${img6}` },
-//       ];
-
-//       // Display colleges based on the showMore state and collegesToShow value
-//     const displayColleges = showMore ? colleges : colleges.slice(0, collegesToShow);
-
-//     // Function to toggle between showing all and showing fewer colleges
-//     const handleViewToggle = () => {
-//         setShowMore(!showMore);
-//         setCollegesToShow(showMore ? 6 : colleges.length);
-//     };
-//   return (
-//     <>
-//     <div className="collegeListing">
-//       <h1 className='l-head'><strong>College</strong> Listing</h1>
-//       <div className="college-grid">
-//         {displayColleges.map(college => (
-//           <div className="college-card" key={college.id}>
-//             <img src={college.imageUrl} alt={college.name} className="college-image" />
-//             <div className="college-info">
-//               <h2>{college.name}</h2>
-//               <p><strong> Location:</strong> {college.location}</p>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       {colleges.length > 6 && (
-//                     <button className='vag' onClick={handleViewToggle}>
-//                         {showMore ? 'View Less Colleges' : 'View All Colleges'}
-//                     </button>
-//                 )}
-//     </div>
-//     </>
-//   )
-// }
-
-// export default CollegeListing
-
-
-
-
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import img1 from "../Images/collage-images/unnamed(2).jpeg";
 import img2 from "../Images/collage-images/unnamed (1).jpg";
 import img3 from "../Images/collage-images/unnamed(3).jpeg";
@@ -70,28 +6,63 @@ import img4 from "../Images/collage-images/unnamed.jpg";
 import img5 from "../Images/collage-images/dy.jpeg";
 import img6 from "../Images/collage-images/sies.jpeg";
 import { Link } from 'react-router-dom'
+import profileDefault from '../Images/profileDefault.png'
 
 function CollegeListing() {
 
-    const colleges = [
-        { id: 1, name: 'Bharati Vidyapeeth DET Kharghar', location: 'Kharghar', imageUrl: img1},
-        { id: 2, name: 'Bharati Vidyapeeth MU Kharghar', location: 'Kharghar', imageUrl: img2 },
-        { id: 3, name: 'Pillai Collage Panvel', location: 'Kharghar', imageUrl: img3 },
-        { id: 4, name: 'Bharati Vidyapeeth Pune', location: 'Kharghar', imageUrl: img4 },
-        { id: 5, name: 'Dy Patil Pune', location: 'Kharghar', imageUrl: img5 },
-        { id: 6, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: img6 },
-    ];
+    const [colleges, setColleges] = useState()
+    const [userProfile, setUserProfile] = useState('');
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch('http://localhost:5001/users/allusers');
+          const json = await response.json();
+    
+          // Sort users based on a timestamp or ID indicating when the user was created
+          const sortedUsers = json.sort((a, b) => {
+            // Assuming users have a property 'createdAt' indicating the creation time
+            return new Date(b.createdAt) - new Date(a.createdAt);
+          });
+    
+          // Get the first 6 users
+          const latestUsers = sortedUsers.filter(college => college.userType === "College").reverse().slice(0, 6);
+    
+          if (response.ok) {
+            setColleges(latestUsers);
+          }
+        } catch (error) {
+          console.error('Error fetching latest users:', error);
+        }
+      };
+    
+      fetchData();
+    }, []);
+     
+
+    console.log("colleges:",colleges)
+    
+
+    // const colleges = [
+    //     { id: 1, name: 'Bharati Vidyapeeth DET Kharghar', location: 'Kharghar', imageUrl: img1},
+    //     { id: 2, name: 'Bharati Vidyapeeth MU Kharghar', location: 'Kharghar', imageUrl: img2 },
+    //     { id: 3, name: 'Pillai Collage Panvel', location: 'Kharghar', imageUrl: img3 },
+    //     { id: 4, name: 'Bharati Vidyapeeth Pune', location: 'Kharghar', imageUrl: img4 },
+    //     { id: 5, name: 'Dy Patil Pune', location: 'Kharghar', imageUrl: img5 },
+    //     { id: 6, name: 'SIES Collage Nerul', location: 'Kharghar', imageUrl: img6 },
+    // ];
 
   return (
     <>
-    <div className="collegeListing">
+    <div className="collegeListing" id='colleges'>
       <h1 className='l-head'><strong>College</strong> Listing</h1>
       <div className="college-grid">
-        {colleges.map(college => (
-          <div className="college-card" key={college.id}>
-            <img src={college.imageUrl} alt={college.name} className="college-image" />
+        {colleges && Object.values(colleges).map(college => (
+          <div className="college-card" key={college._id}>
+            {/* <img src={college.imageUrl} alt={college.name} className="college-image" /> */}
+            <img src={userProfile === '' ? `http://localhost:5001/uploads/${college.userProfile}` : profileDefault} alt="profileImg" className='college-image'/>
             <div className="college-info">
-              <h2>{college.name}</h2>
+              <h2>{college.username.toUpperCase()}</h2>
               <p><strong> Location:</strong> {college.location}</p>
             </div>
           </div>

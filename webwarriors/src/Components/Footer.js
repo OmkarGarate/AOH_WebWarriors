@@ -5,6 +5,7 @@ import thc5 from "../Images/footer-images/instagram/thumb-card5.png";
 import thc6 from "../Images/footer-images/instagram/thumb-card6.png";
 import thc7 from "../Images/footer-images/instagram/thumb-card7.png";
 import thc8 from "../Images/footer-images/instagram/thumb-card8.png";
+import img1 from "../Images/chat.png";
 import { FontAwesomeIcon } from "react-fontawesome";
 import insta from "../Images/footer-images/instagram-line.png";
 import facebook from "../Images/footer-images/facebook-circle-line.png";
@@ -12,13 +13,37 @@ import twitter from "../Images/footer-images/twitter-x-line.png";
 import youtube from "../Images/footer-images/youtube-line.png";
 import env from "../Images/footer-images/env.png";
 import location from "../Images/location.png";
+import Faq from "./Faq";
+
+
 
 // import { faFacebookF, faInstagram, faTwitter, faYoutube } from 'free-brands-svg-icons';
 
 // Excel Sheet URl: https://docs.google.com/spreadsheets/d/1VkANVTLgK7HaDSGU60q7DcIQHM6jgcApW50TqZD5iiY/edit?usp=sharing
 //https: script.google.com/macros/s/AKfycbzeZN5JqdRmUjK8TllMpEv-7FrQsMDBl1CHPUockJQYQy7UboM7BSKZFfFvYNBlFRSlrA/exec
 function Footer() {
-  
+
+  const [showChatbot, setShowChatbot] = useState(false);
+
+  const toggleChatbot = () => {
+    // Open a new window with your Flask app's URL
+    const chatbotWindow = window.open('http://localhost:5000', '_blank');
+    // You may need to adjust the URL to match your Flask app's endpoint
+    
+    // Optionally, you can focus the new window
+    if (chatbotWindow) {
+        chatbotWindow.focus();
+    }
+    setShowChatbot(!showChatbot);
+  };
+
+  // FAQ section
+  const [showFaq, setShowFaq] = useState(false);
+
+  const toggleFaq = () => {
+    setShowFaq(!showFaq);
+  };
+
   const [showSuccess, setShowSuccess] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,8 +79,10 @@ function Footer() {
     }
   };
 
+  
+
   return (
-    <div>
+    <div id="contactus">
       <footer className="footer">
         <div className="container">
           <div className="about-us" data-aos="fade-right" data-aos-delay="200">
@@ -77,10 +104,14 @@ function Footer() {
             </div>
           </div>
 
-          <div class="newsletter" data-aos="fade-right" data-aos-delay="200">
+          <div
+            className="newsletter"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
             <h1>CONTACT US</h1>
             <p>Write any Query or Feedback</p>
-            <div class="form-element">
+            <div className="form-element">
               <form name="submit-to-google-sheet" onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -100,7 +131,7 @@ function Footer() {
                   placeholder="Write Your Message"
                   required
                 ></textarea>
-                <button type="submit" nameName="btn">
+                <button type="submit" name="btn">
                   SUBMIT
                 </button>
               </form>
@@ -135,9 +166,17 @@ function Footer() {
           </div>
 
           <div className="faqButton">
-          <button className="vag">FAQ</button>
-          
-        </div>
+            <button className="vag" onClick={toggleFaq}>
+              FAQ
+            </button>
+            {/* Show FAQ component if showFaq is true */}
+            {showFaq && <Faq />}
+          </div>
+
+          {/* Button to toggle chatbot */}
+          <div className="chat-button">
+            <button className="vag" onClick={toggleChatbot}><img src={img1} alt="" /></button>
+          </div>
         </div>
 
         <div className="copy-rights flex-row">
@@ -145,7 +184,16 @@ function Footer() {
             Copyrights &copy;2024 All rights reserved | <span>MOSAIC</span>
           </h4>
         </div>
+
+        {showChatbot && (
+          <div className="chatbot-container">
+            {/* Include your chatbot component here */}
+          </div>
+        )}
+       
+   
       </footer>
+
       {/* Show success alert if showSuccess is true */}
       {showSuccess && (
         <div className="alert">

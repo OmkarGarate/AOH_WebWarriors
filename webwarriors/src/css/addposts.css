@@ -1,0 +1,31 @@
+.addPosts{
+    border: 1px solid black;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.167);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.addPosts label{
+    border: 1px solid white;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addPosts label input{
+    display: none;
+}
+
+.addPosts img{
+    width: 50%;
+    height: 50%;
+}

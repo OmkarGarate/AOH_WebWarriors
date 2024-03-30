@@ -41,18 +41,22 @@
 }
 
 .category{
+        /* height: max-content; */
     /* border: 1px solid black; */
     width: 300px;
-    background-color: white;
+    background-color: #f7f7f711;
     display: flex;
     align-items: flex-start;
+    backdrop-filter: blur(2px);
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 15px;
     position: absolute;
     left: 135px;
+    top: 0px;
     /* transition: 0.3s ease-in-out; */
     transition: opacity 0.5s ease-in-out;
+    z-index: 3;
 }
 
 .category .cateBtn button{
@@ -60,6 +64,10 @@
     /* color: #ff3600; */
     background-image: none;
     cursor: pointer;
+}
+
+.cateBtn button:hover{
+    background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
 }
 
 .category.visible {

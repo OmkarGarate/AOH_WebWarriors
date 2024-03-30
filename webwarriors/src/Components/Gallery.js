@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import img1 from '../Images/Image1.jpg'
 import img2 from '../Images/Image2.jpg'
 import img3 from '../Images/Image3.jpg'
@@ -8,36 +8,31 @@ import img6 from '../Images/Image6.jpg'
 import img7 from '../Images/Image7.jpg'
 import img8 from '../Images/Image8.jpg'
 import { Link } from 'react-router-dom'
+import { useAuthContext } from "../hooks/useAuthContext";
 
 function Gallery() {
 
-    const images = [
-        img1,
-        img2,
-        img3,
-        img4,
-        img5,
-        img6,
-        img7,
-        img8
-    ]
+    const { user } = useAuthContext();
+  const [events, setEvents] = useState([]);
 
-    var k =0;
-
-    const events = [];
-      for (var i = 0; i < 8; i++) {
-        events.push({
-            name: "Event" + (i+1),
-            desc: "Organized on " + (i+1)+2 + " June 2023",
-            img : images[k]
-        })
-      if(k===7)
-      {
-          k=0;
-      }else{
-          k++;
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('http://localhost:5001/events/');
+        if (response.ok) {
+          const json = await response.json();
+          console.log("allEve", json)
+          setEvents(json);
+          }
+      } catch (error) {
+        console.error('Error fetching events:', error);
       }
-      }
+    };
+  
+    // if (user) {
+      fetchEvents();
+    // }
+  }, [user]);
 
       const chunkSize = 8; // Set the number of events per row
       
@@ -57,9 +52,10 @@ function Gallery() {
                     {events.map((eve, index)=>(
                     <Link to={"/eventPage"} className={`evePhotos item${index + 1}`} key={index} >
                         {/* <div className="cover"></div> */}
-                        <img src={eve.img} alt="Event" className='grayImg'/>
+                        {/* <img src={eve.img} alt="Event" className='grayImg'/> */}
+                        <img src={`http://localhost:5001/uploads/${eve.poster}`} alt="contentImage" className='grayImg'/>
                         <div className="geDesc">
-                            <h2>{eve.name}</h2>
+                            <h2>{eve.title}</h2>
                             <p>{eve.desc}</p>
                         </div>
                     </Link>

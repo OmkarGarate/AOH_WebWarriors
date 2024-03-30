@@ -1,0 +1,30 @@
+.chatPop{
+    /* border: 1px solid black; */
+    height: 100vh;
+    width: 400px;
+    position: absolute;
+    top: 0;
+    right: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    align-items: flex-end;
+    gap: 20px;
+    z-index: 5;
+}
+
+.chatPop .chatBox{
+    /* border: 1px solid black; */
+    height: 70vh;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.chatPop button{
+    padding: 15px 20px;
+    width: max-content;
+    cursor: pointer;
+}

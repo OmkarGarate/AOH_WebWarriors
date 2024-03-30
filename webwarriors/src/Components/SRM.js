@@ -3,6 +3,7 @@ import '../css/srm.css'
 import plates from '../Images/plates.jpg'
 import Signin from './Signin'
 import Signup from './Signup'
+import { Link } from "react-router-dom";
 
 function SRM() {
   const [abtInfo, setAbtInfo] = useState({
@@ -64,6 +65,7 @@ function SRM() {
   return (
     <>
       <div className="srmMain">
+    <Link to={'/'} className="bth vag">Back to home</Link>
         <div className="srm">
           <div className="srmWhite" ref={srmWhiteRef}>
             {showSignUp ? <Signup /> : <Signin />}

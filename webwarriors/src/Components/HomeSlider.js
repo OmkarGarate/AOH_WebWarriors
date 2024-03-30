@@ -14,29 +14,29 @@ import arrow from "../Images/prev.png";
 import { useEffect } from "react";
 
 function HomeSlider() {
-  const [slide, setSlide] = useState({
-    transform: "translateX(0vw)",
-  });
-
-  const [n, setN] = useState(1);
-
-  const left = () => {
-    const trs = n === 1 ? 0 : (n - 2) * -100;
-    setN(n === 1 ? 1 : n - 1);
-
-    setSlide({
-      transform: `translateX(${trs}vw)`,
+    const [slide, setSlide] = useState({
+      transform: "translateX(0vw)",
     });
-  };
 
-  const right = () => {
-    const trs = n === 4 ? (4 - 1) * -100 : n * -100;
-    setN(n === 4 ? 4 : n + 1);
+    const [n, setN] = useState(1);
 
-    setSlide({
-      transform: `translateX(${trs}vw)`,
-    });
-  };
+    const left = () => {
+      const trs = n === 1 ? 0 : (n - 2) * -100;
+      setN(n === 1 ? 1 : n - 1);
+
+      setSlide({
+        transform: `translateX(${trs}vw)`,
+      });
+    };
+
+    const right = () => {
+      const trs = n === 4 ? (4 - 1) * -100 : n * -100;
+      setN(n === 4 ? 4 : n + 1);
+
+      setSlide({
+        transform: `translateX(${trs}vw)`,
+      });
+    };
 
   useEffect(() => {
     const changeSlide = (count) => {
@@ -107,8 +107,8 @@ function HomeSlider() {
                 </p>
               </div>
               <div className="sdBtns">
-                <button className="vag">ABOUT US</button>
-                <button className="vag gs">GET STARTED!</button>
+                {/* <button className="vag">ABOUT US</button> */}
+                {/* <button className="vag gs">GET STARTED!</button> */}
               </div>
         </div>
       </div>

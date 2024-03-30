@@ -1,0 +1,249 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.signin,
+.signup {
+  width: 100%;
+
+}
+
+.signup{
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.siHeading {
+  padding: 50px;
+}
+
+.suHeading {
+  padding: 15px 50px;
+}
+.siHeading h1 {
+  width: max-content;
+  margin: auto;
+  font-weight: 800;
+  background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.4rem;
+}
+
+.siHeading p {
+  text-align: center;
+  color: #808080;
+  padding: 20px;
+}
+
+.suHeading p {
+  text-align: center;
+  color: #808080;
+  padding: 5px;
+  font-size: 0.8rem;
+}
+
+.twoBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.twoBtnn{
+  margin-top: 10px;
+}
+
+.google img,
+.gmail img {
+  border: 1px solid #808080;
+  border-radius: 50%;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transition: opacity 0.3s ease; 
+}
+
+.gmail_c,
+.google_c {
+  /* top: 0;
+  left: 0; */
+  opacity: 0; /* Initially hide the second image */
+}
+
+.gmail,
+.google {
+  /* border: 1px solid #808080; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  width: 40px;
+  padding: 8px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.gmail:hover .gmail_c {
+  opacity: 1;
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-image: linear-gradient(to right, red, blue) ; */
+  border-radius: 50%;
+}
+
+.google:hover .google_c {
+  opacity: 1;
+  /* border-width: 1px; */
+  /* border-style: solid; */
+  /* border-image: linear-gradient(to right, red, blue) ; */
+  border-radius: 50%;
+}
+
+.gmail:hover .gmail_g {
+  border-width: 1px;
+  border-style: solid;
+  /* border-image: linear-gradient(to right, red, blue) ; */
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.google:hover .google_g {
+  border-width: 1px;
+  border-style: solid;
+  /* border-image: linear-gradient(to right, red, blue) ; */
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.siInputs {
+  /* border: 1px solid blue; */
+  width: 75%;
+  margin: auto;
+  padding: 20px 0 10px 0;
+  cursor: pointer;
+}
+
+.siInputss{
+  padding: 15px 0 0 0;
+}
+
+.siEmail {
+  /* border: 1px solid red; */
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  padding: 5px 5px 5px 10px;
+  border-radius: 10px;
+  background-color: #e4e1e1;
+  margin-bottom: 20px;
+}
+
+.siEmail img {
+  width: 20px;
+  height: 20px;
+}
+
+.locks {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.locks img {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
+.siEmail input {
+  outline: none;
+  color: #808080;
+  width: 100%;
+  background-color: #e4e1e1;
+  padding: 8px;
+  border: none;
+}
+
+.siBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: max-content;
+  margin: auto;
+}
+
+.siBtn button {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  border-radius: 40px;
+  padding: 12px 55px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  /* background-color: transparent; */
+  position: relative;
+  background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
+ 
+}
+
+.siBtn button::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 100%;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-radius: 40px;    
+        z-index: -1; 
+        background-color: transparent;
+        transition: 0.3s ease-in-out;
+        background-image: url('../Images/down_arrowhead.png');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 20px;
+        transform: rotate(270deg);
+        opacity: 0;
+}
+
+.siBtn:hover ::before{
+    opacity: 1;
+    transform: translateX(130px) rotate(270deg);
+}
+
+.sr_radioBtns{
+  /* border: 1px solid black; */
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.r_user{
+  display: flex;
+    font-size: 0.80rem;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    color: #808080;
+    font-weight: 400;
+}
+
+.r_user input{
+  cursor: pointer;
+}
+
+.secretkey{
+  opacity: 0;
+}

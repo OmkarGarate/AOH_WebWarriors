@@ -1,0 +1,106 @@
+.box {
+    width: 50%;
+    margin: 100px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    position: relative;
+}
+.poster {
+    flex: 1;
+    padding: 2rem;
+}
+.description {
+    flex: 1.5;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+}
+.description h1{
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 20px ;
+}
+.description p{
+    padding-bottom: 10px;
+    font-size: .9rem;
+}
+.poster img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+.event-info h3{
+    padding-bottom: 10px;
+}
+
+.register-button {
+    margin-top: 20px;
+}
+.register-button button {
+    padding: 10px 30px;
+    background-color: orange;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.register-button button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.shareBtn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+  }
+  
+  .shareBtn button {
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-image: linear-gradient(145deg, #ff3600, 70%, #ffc52b);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0px 5px 15px 0px gray;
+    cursor: pointer;
+  }
+  
+  .shareBtn button img {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+  }
+
+
+  .like-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+  }
+  
+  .like-button img {
+    width: 30px;
+    height: 30px;
+ 
+  }
+  
+  
+  
+  
+  
+  
+  
+  

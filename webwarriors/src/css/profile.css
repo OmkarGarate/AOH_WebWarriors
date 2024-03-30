@@ -1,0 +1,117 @@
+.profilePage{
+    /* border: 1px solid black; */
+    margin: 50px auto;
+}
+
+.prof1{
+    /* border: 1px solid black; */
+    position: relative;
+    width: 970px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px gray;
+    overflow: hidden;
+    background-color: #ffeae1;
+}
+
+.profBg{
+    width: 100%;
+    aspect-ratio: 21/9;
+    object-fit: cover;
+    object-position: bottom;
+    /* border: 1px solid black; */
+    display: block;
+
+}
+
+.profDesc{
+    /* border: 1px solid black; */
+    position: relative;
+    padding: 0 20px;
+    padding-top: 50px;
+}
+
+.profDesc button{
+    position: absolute;
+    right: 20px;
+    top: -13px;
+    padding: 7px 13px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(77, 80, 81, 1);
+    color: white;
+    box-shadow: 0px 3px 10px 0px #ffad89;
+    cursor: pointer;
+}
+
+.profileImg{
+    width: 100px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50px;
+    box-shadow: 0px 5px 10px 0px #ffad89;
+    cursor: pointer;
+    top: -50px;
+    transition: 0.5s ease-in-out;
+    animation: bounce 2s ease-in-out infinite;
+    position: absolute;
+}
+
+@keyframes bounce {
+    0%, 100%{
+        /* height: 100px; */
+        top: -50px;
+        box-shadow: 0px 0px 10px 0px #ffad89;
+    }
+    50%{
+        /* height: 50px; */
+        top: -70px;
+        box-shadow: 0px 5px 10px 0px #ffad89;
+    }
+}
+
+.profDesc .prd{
+    /* border: 1px solid black; */
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.regnlik{
+    width: 970px;
+    /* border: 1px solid black; */
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.regnlik button{
+    padding: 10px 20px;
+    color: #ff4d00;
+    font-size: 1rem;
+    font-weight: 500;
+    /* background-color: #ff4d003e; */
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid #ff4d00;
+    box-shadow: 0px 5px 10px 0px #ffad89;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.regnlik button:hover{
+    background-color: #ff4d00;
+    color: white;
+}
+
+.rnlEvents{
+    /* border: 1px solid black; */
+    width: 970px;
+    margin: auto;
+    /* padding: 20px; */
+}

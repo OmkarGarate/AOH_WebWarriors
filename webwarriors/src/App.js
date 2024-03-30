@@ -17,6 +17,7 @@ import Signin from './Components/Signin';
 import Signup from './Components/Signup';
 import SRM from './Components/SRM';
 import LeaderBoard from './Components/LeaderBoard';
+import '../src/css/leaderboard.css'
 
 
 

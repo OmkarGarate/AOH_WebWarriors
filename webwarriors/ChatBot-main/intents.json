@@ -1,0 +1,94 @@
+{
+    "intents": {
+        "greetings": {
+            "questions": [
+                "Hi",
+                "hello",
+                "hii",
+                "hola",
+                "hey"
+            ],
+            "responses": [
+                "Hey! I'm your friendly assistant. What can I do for you?"
+            ]
+        },
+        "events_inquiry": {
+            "questions": [
+                "How can I find events happening on my college campus?",
+                "How to find events?",
+                "How to see events?"
+            ],
+            "responses": [
+                "You can easily find events on your college campus by visiting the Mosaic website, and search for your college name you can get it there..!!"
+            ]
+        },
+        "usage": {
+            "questions": [
+                "I'm new to Mosaic. Can you walk me through how to use it?",
+                "How to use Mosaic?",
+                "What is Mosaic?"
+            ],
+            "responses": [
+                "Of course! To get started, you can visit the Mosaic website and browse through the events listed there. If you need personalized recommendations, you can log in or sign up."
+            ]
+        },
+        "custom_intent": {
+            "questions": [
+                "What kind of events does Mosaic showcase?",
+                "Events on Mosaic",
+                "Different types of events ?"
+            ],
+            "responses": [
+                "Mosaic showcases a wide range of events, including festivals, workshops, seminars, and more. You can explore different categories to find events that interest you the most."
+            ]
+        },
+        "participate": {
+            "questions": [
+                "How can I participate in an event listed on Mosaic?",
+                "How to register for event?"
+            ],
+            "responses": [
+                "Participating in an event listed on Mosaic is easy! Create an account or sign in and simply click on the event you're interested in to find more information, such as the date, time, location, and registration details."
+            ]
+        },
+        "event_add": {
+            "questions": [
+                "Can I add my college's event to Mosaic?",
+                "How to add an event on Mosaic?",
+                "How to post a new event on Mosaic?"
+            ],
+            "responses": [
+                "Currently, only authorized personnel can add events to Mosaic. However, if you have a suggestion for an event, feel free to reach out to the organizers or administrators at your college to have it added."
+            ]
+        },
+        "publicity": {
+            "questions": [
+                "Can I share events from Mosaic with my friends?",
+                "How to share events?"
+            ],
+            "responses": [
+                "Absolutely! You can easily share events from Mosaic with your friends by using the social sharing buttons provided on the specific event. Spread the word and invite your friends to join in on the fun!"
+            ]
+        },
+        "feedback": {
+            "questions": [
+                "Can I provide feedback or suggestions for improving Mosaic?",
+                "How to give feedback?"
+            ],
+            "responses": [
+                "Yes, we welcome feedback and suggestions for improving Mosaic! If you have any ideas or suggestions, please feel free to share them with us, and we'll take them into consideration for future updates."
+            ]
+        },
+        "new_events": {
+            "questions": [
+                "How can I stay updated on the latest news and announcements from Mosaic?",
+                "How to get new events?"
+            ],
+            "responses": [
+                "You can stay updated on the latest news and announcements from Mosaic by subscribing to our newsletter or following us on social media. We regularly share updates about new events, features, and more!"
+            ]
+        }
+    }
+}
+
+  

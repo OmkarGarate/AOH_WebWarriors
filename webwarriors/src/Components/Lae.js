@@ -10,6 +10,9 @@ import img7 from '../Images/Image7.jpg'
 import img8 from '../Images/Image8.jpg'
 
 function Lae() {
+  
+
+
     const images = [
         img1,
         img2,

@@ -9,19 +9,28 @@ import Footer from './Footer';
 import Mosaicexpertise from './Mosaicexpertise';
 import About from './About';
 import CollegeListing from './CollegeListing';
+import GalleryNew from './GalleryNew';
+import EventRecommendation from './EventRecommendation';
+import LeaderBoard from './LeaderBoard';
+
 
 function Home() {
+  
   return (
     <div>
         <Navbar/>
         <HomeSlider/>
-        <About/>
-        <Lae/>
+        <EventRecommendation/>
+        <LeaderBoard/>
         <EventListing/>
-        <Gallery/>
-        <Mosaicexpertise/>
+        {/* <Gallery/> */}
+        {/* <GalleryNew/> */}
+        <Lae/>
+        {/* <Mosaicexpertise/> */}
         <CollegeListing/>
+        <About/>
         <Footer/>
+       
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import filter from '../Images/filter.png';
+import '../css/category.css'
 
 function Category() {
     const [isCategoryVisible, setIsCategoryVisible] = useState(false);

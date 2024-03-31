@@ -50,6 +50,10 @@ function EventPage() {
   }, [events, user]);
 
   const handleLikeClick = async () => {
+    if(!user)
+    {
+      alert("Please login to like")
+    }
     try {
       const response = await fetch(`http://localhost:5001/events/${id}/like`, {
         method: "POST",
@@ -70,7 +74,12 @@ function EventPage() {
     }
   };
 
+
   const handleRegClick = async () => {
+    if(!user)
+    {
+      alert("Please login to register")
+    }
     try {
       const response = await fetch(`http://localhost:5001/events/${id}/register`, {
         method: "POST",
@@ -82,7 +91,6 @@ function EventPage() {
       if (response.ok) {
         fetchEvents(); // Refresh events after liking
         setIsReg(!isReg); // Toggle like status
-        
       } else {
         console.error("Failed to register event");
       }
@@ -165,6 +173,7 @@ function EventPage() {
                 >{isReg ? "Registered" : "Register Now"}</button>
                 <button
                 onClick={handleRegClick2}
+                style={{display: isReg ? "block": "none"}}
                 >{imi ? "Thank you" : "I am in"}</button>
               </div>
             </div>

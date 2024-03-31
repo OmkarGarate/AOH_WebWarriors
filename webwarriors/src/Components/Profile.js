@@ -63,9 +63,12 @@ function Profile() {
           console.log("ud", userData)
       }
 
+
     return (
        <>
-         <AddPosts ap={apStyle}/>
+         <div className="blur" style={{display: !user? "flex" : "none"}}>
+            <p><Link to={'/srm'} className='vag'>Login</Link> to continue</p>
+         </div>
         <div className='profilePage'>
             <Link to={"/"}><button className='backBtn'><img src={prev} alt="next" /></button></Link>
             {/* <div className="prof1">

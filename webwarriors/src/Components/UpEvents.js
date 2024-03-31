@@ -172,7 +172,7 @@ function UpEvents() {
                 <button style={{ backgroundColor: selectedCategory === 'Sports Event' ? 'red' : '' }} onClick={() => handleCategoryClick('Sports Event')}>Sports</button>
               </div>
               <div className="cateBtn">
-                <button style={{ backgroundColor: selectedCategory === 'Technical Event' ? 'red' : '' }} onClick={() => handleCategoryClick('Technical Event')}>Technical</button>
+                <button style={{ backgroundColor: selectedCategory === 'Technical' ? 'red' : '' }} onClick={() => handleCategoryClick('Technical')}>Technical</button>
               </div>
               <div className="cateBtn">
                 <button style={{ backgroundColor: selectedCategory === 'E-Sports Event' ? 'red' : '' }} onClick={() => handleCategoryClick('E-Sports Event')}>E-Sports</button>

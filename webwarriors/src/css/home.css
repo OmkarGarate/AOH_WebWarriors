@@ -38,6 +38,22 @@ input, select, textarea{
     outline: none;
 }
 
+.blur{
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* gap: 20px; */
+}
+
+.blur a{
+  margin-right: 10px;
+}
+
 .bth{
   position: absolute;
   top: 50px;

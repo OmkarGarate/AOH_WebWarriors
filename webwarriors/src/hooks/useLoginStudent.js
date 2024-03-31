@@ -1,41 +1,39 @@
-import React from 'react'
-import { useState } from 'react'
-import {useAuthContext} from './useAuthContext'
+// useLoginStudent.js
+import { useState } from 'react';
+import { useAuthContext } from './useAuthContext';
 
-export const useLoginStudent = () => {
-    const [errorU, setErrorU] = useState(null)
-    const [isLoadingU, setIsLoadingU] = useState(null)
-    const {dispatch} = useAuthContext()
+const useLoginStudent = () => {
+    const [error, setError] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const { dispatch } = useAuthContext();
 
-    const loginUser = async (email, password) =>{
-        setIsLoadingU(true)
-        setErrorU(null)
+    const loginUser = async (email, password) => {
+        setIsLoading(true);
+        setError(null);
 
-        const response = await fetch('http://localhost:5001/users/loginuser', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
-        })
+        try {
+            const response = await fetch('http://localhost:5001/users/loginuser', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
 
-        const json = await response.json()
+            const json = await response.json();
 
-        if(!response.ok){
-            setIsLoadingU(false)
-            setErrorU(json.error)
+            if (!response.ok) {
+                throw new Error(json.error || 'An error occurred during login.');
+            }
+
+            localStorage.setItem('user', JSON.stringify(json));
+            dispatch({ type: 'LOGIN', payload: json });
+        } catch (error) {
+            setError(error.message);
+        } finally {
+            setIsLoading(false);
         }
+    };
 
-        if(response.ok){
-            // save the user to local storare
-            localStorage.setItem('user', JSON.stringify(json))
+    return { loginUser, isLoading, error };
+};
 
-            //update the auth context
-            dispatch({type: 'LOGIN', payload: json})
-
-            setIsLoadingU(false)
-        }
-
-    }
-    return {loginUser, isLoadingU, errorU}
-}
-
-export default useLoginStudent
+export default useLoginStudent;

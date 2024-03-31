@@ -51,7 +51,9 @@ function LeaderBoard() {
             <div className="lbContent">
                 {events.map((eve, index)=>(
                     <div className="lbC1" key={index}>
-                        <img src={gold} alt="" />
+                        {/* <p>{index+1}</p> */}
+                        {index+1 === 1 ? <img src={gold} alt="" />: index+1 === 2? <img src={silver} alt="" />: index+1 === 3 ? <img src={bronze} alt="" />: <p className='rank'>{index+1}</p>}
+                        
                         {/* <img src={userProf} alt="" /> */}
                         <img src={`http://localhost:5001/uploads/${eve.userProfile}`} alt="profileImg"/>
                         <div className="uname">

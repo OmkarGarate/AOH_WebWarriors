@@ -62,22 +62,22 @@ function Signin() {
         // console.log('Exploring in as a User', email, password);
         setConf("Exploring In as a College");
         setErrorM(false)
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        // setTimeout(() => {
+          // navigate('/');
+        // }, 1000);
       } else {
         setErrorM(error)
         console.log('Credentials not matching', errorU);
       }
     }else{
       await loginUser(email, password);
-      if (errorU === null) {
+      if (!errorU ) {
         console.log('Exploring in as a User', email, password);
         setConf("Exploring In as a Student");
         setErrorM(false)
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        // setTimeout(() => {
+          // navigate('/');
+        // }, 1000);
       } else {
         setErrorM(errorU)
         console.log('Credentials not matching', errorU);

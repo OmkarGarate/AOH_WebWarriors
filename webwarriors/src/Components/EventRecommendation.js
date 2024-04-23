@@ -22,7 +22,14 @@ function EventRecommendation() {
         const response = await fetch('http://localhost:5001/events/');
         if (response.ok) {
           const json = await response.json();
-          const sortedEvents = json.sort((a, b) => b.likes.length - a.likes.length);
+  
+          // Filter events based on start date
+          const currentDate = new Date();
+          const currentEvents = json.filter(event => new Date(event.date) >= currentDate);
+          // console.log("currentEvents", currentDate)
+          // Sort events by likes
+          const sortedEvents = currentEvents.sort((a, b) => b.likes.length - a.likes.length);
+          
           setEvents(sortedEvents);
         }
       } catch (error) {
@@ -30,10 +37,9 @@ function EventRecommendation() {
       }
     };
   
-    // if (user) {
-      fetchEvents();
-    // }
-  }, [user]);
+    fetchEvents();
+  }, []);
+  
 
 
   const chunkSize = 3; // Set the number of events per row

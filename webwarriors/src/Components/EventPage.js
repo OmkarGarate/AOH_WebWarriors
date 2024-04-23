@@ -170,7 +170,7 @@ function EventPage() {
               <div className="register-button">
                 <button
                 onClick={handleRegClick}
-                >{isReg ? "Registered" : "Register Now"}</button>
+                >{isReg ? "Unregister" : "Register Now"}</button>
                 <button
                 onClick={handleRegClick2}
                 style={{display: isReg ? "block": "none"}}

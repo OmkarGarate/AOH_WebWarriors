@@ -23,7 +23,9 @@ function RegEvents() {
         if (response.ok) {
           const json = await response.json();
           const filteredEvents = await json.filter(event => event.registered.includes(user.user._id)); 
-          setEvents(filteredEvents);
+          const sortedEvents = filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+          setEvents(sortedEvents);
+
           console.log("registered events", events)
         }
       } catch (error) {

@@ -72,7 +72,7 @@ function Signin() {
     }else{
       await loginUser(email, password);
       if (!errorU ) {
-        console.log('Exploring in as a User', email, password);
+        // console.log('Exploring in as a User', email, password);
         setConf("Exploring In as a Student");
         setErrorM(false)
         // setTimeout(() => {

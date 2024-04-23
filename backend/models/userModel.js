@@ -124,7 +124,8 @@ userSchema.statics.loginCollege = async function(email, password, secretKey){
 
     if(!user)
     {
-        throw Error("Incorrect Email")
+        return Error("Incorrect credentials")
+        // return "Incorrect credentials"
     }
 
     const match = await bcrypt.compare(password, user.password)

@@ -15,7 +15,7 @@ function Navbar() {
     const {user} = useAuthContext();
     const navigate = useNavigate()
     const {logout} = useLogout()
-    console.log(user) 
+    console.log("user",user) 
 
     const [searchBox, setSearchBox] = useState({
         opacity: "0",

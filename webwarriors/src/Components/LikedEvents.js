@@ -23,7 +23,8 @@ function LikedEvents() {
         if (response.ok) {
           const json = await response.json();
           const filteredEvents = await json.filter(event => event.likes.includes(user.user._id)); 
-          setEvents(filteredEvents);
+          const sortedEvents = filteredEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+          setEvents(sortedEvents);
           console.log("liked events", events)
         }
       } catch (error) {

@@ -66,7 +66,7 @@ function Footer() {
           setShowSuccess(false);
           // Reset form fields
           e.target.reset();
-        }, 2000);
+        }, 1000);
       } else {
         // Form submission failed
         throw new Error("Form submission failed");

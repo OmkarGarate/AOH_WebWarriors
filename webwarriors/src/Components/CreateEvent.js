@@ -69,15 +69,15 @@ function CreateEvent() {
         setError(json.error || "Failed to create event");
       } else {
         setPoster(defaultEvent);
-        setCategory("");
-        setTitle("");
-        setDescription("");
-        setDate("");
-        setTime("");
-        setVenue("");
-        setEntryFees("");
-        setError("");
-        setPosterUrl("");
+        setCategory(category);
+        setTitle(title);
+        setDescription(description);
+        setDate(date);
+        setTime(time);
+        setVenue(venue);
+        setEntryFees(entryfees);
+        setError(error);
+        setPosterUrl(posterUrl);
         setConf("Successfully created an event");
       }
     } catch (error) {

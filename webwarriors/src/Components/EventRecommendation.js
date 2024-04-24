@@ -25,11 +25,17 @@ function EventRecommendation() {
   
           // Filter events based on start date
           const currentDate = new Date();
-          const currentEvents = json.filter(event => new Date(event.date) >= currentDate);
+          // console.log(currentDate)
+          currentDate.setDate(currentDate.getDate() - 1);
+const currentEvents = json.filter(event => new Date(event.date) >= currentDate);
+
           // console.log("currentEvents", currentDate)
           // Sort events by likes
-          const sortedEvents = currentEvents.sort((a, b) => b.likes.length - a.likes.length);
-          
+          const sortedEvents = currentEvents
+  .filter(event => event.likes.length > 0) // Filter out events with zero likes
+  .sort((a, b) => b.likes.length - a.likes.length); // Sort based on the number of likes
+
+setEvents(sortedEvents);
           setEvents(sortedEvents);
         }
       } catch (error) {
